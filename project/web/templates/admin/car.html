@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .row {
+            height: 100vh;
+            width: 100%;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            background-image: radial-gradient(
+              circle farthest-corner at 10% 20%,
+              rgba(253, 101, 133, 1) 0%,
+              rgba(255, 211, 165, 1) 90%
+            );
+          }
+    </style>
+    <link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js">
+    </script>
+
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">
+					Auto-Freak</a>
+			</div>
+			<ul class="nav navbar-nav">
+        
+				<li><a href="{% url 'admin_dashboard' %}">Profile</a></li>
+				<li><a href="{% url 'admin_employees' %}">Employees</a></li>
+				<li><a href="{% url 'admin_car' %}">add driver</a></li>
+        <li><a href="{% url 'admin_addedoffers' %}">booking information</a></li>
+        
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="{% url 'admin_changepassword' %}">
+					<span class="glyphicon glyphicon-user"></span>
+					Change Password</a></li>
+				<li><a href="{% url 'admin_logout' %}">
+					<span class="glyphicon glyphicon-log-out"></span>
+					Logout</a></li>
+			</ul>
+		</div>
+	</nav>
+    <form action="{% url 'admin_car'%}" method="post">
+        {% csrf_token %}
+       <div class="row">
+         <div class="col-4">
+           <label for="firstName" class="form-label"> name <span class="text-danger">*</span></label>
+           <input type="name" class="form-control" name="name" id="name" placeholder=" name" required>
+         </div>
+         <div class="col-4">
+           <label for="contact" class="form-label">contact<span class="text-danger">*</span></label>
+           <input type="contact" class="form-control" name="contact" id="contact" placeholder="contact" required>
+         </div>
+         <div class="col-4">
+           <label for="email" class="form-label">email <span class="text-danger">*</span></label>
+           <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
+         </div>
+         <div class="col-4">
+           <label for="password" class="form-label"> work_duration<span class="text-danger">*</span></label>
+           <input type="contact" class="form-control" name="work_duration" id="number" value="" required>
+         </div>
+         <div class="col-4">
+            <label for="password" class="form-label"> salary<span class="text-danger">*</span></label>
+            <input type="contact" class="form-control" name="salary" id="salary" value="" required>
+          </div>
+         
+         <div class="col-4">
+          
+             <button class="btn bsb-btn-xl btn-primary" type="submit">sumbit</button>
+             {{msg}}
+           </div>
+         </div>
+       </div>
+     </form>
+    
+</body>
+</html>

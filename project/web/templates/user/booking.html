@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	{% load static %}
+	<style>
+		body{
+            font-family: 'raleway',sans-seerif;
+            font-weight: 400;
+             color:#fff;
+             letter-spacing:  1px;
+        }
+        .container{
+            background-color:#fafafa;
+            margin: 200px;
+            box-shadow: 10px 15px 20px rgba(0,0,0,.1);
+            display: grid;
+            grid-template-columns: 40% 60%;
+        }
+        .container-time{
+            background-color:rgba(0,0,0,.95);
+            padding:150px;
+            border: 3px dashed #998100;
+            outline-offset:-30px;
+            text-align: center;
+        }
+        .heading {
+            font-size:50px;
+            text-transform:upprcase;
+        }
+        .heading-days {
+            color:#998100;
+            font-size:30px;
+        }
+        .heading-phone {
+            font-size: 20px;
+        }
+        
+        
+        .container-form {
+            padding:50px 0;
+            margin:0 auto;
+            color:#000;
+            grind-row-gap:20px;
+
+        }
+        form {
+            display:grind;
+            grind-row-gap:20px;
+
+        }
+        .form-p {
+            font-weight:600;
+
+        }
+        .form-field {
+            display:flex;
+            justify-content:space-between;
+        }
+        input-field {
+            display: flex;
+            justify-content: ;
+        }
+        .btn {
+            background-color:rgba(0,0,0,.95);
+            color:#fff;
+            padding: 12px 140px;
+            border: none;
+            font-size: 18px;
+            border-radius: 10px;
+            -webkit-border-radius: 100px;
+            -moz-border-radius: 100px;
+            -ms-border-radius: 100px;
+            -o-border-radius: 100px;
+            box-shadow: 7px 10px 12px rgba(0,0,0,.1);
+            cursor:pointer;
+            transition:all;
+            -webkit-transition:all;
+            -moz-transition:all;
+            -ms-transition:all;
+            -o-transition:all;
+
+        }
+        .btn:hover{
+            transform:scale(1.03);
+            -webkit-transform:scale(1.03);
+            -moz-transform:scale(1.03);
+            -ms-transform:scale(1.03);
+            -o-transform:scale(1.03);
+            box-shadow:7px 10px 12px rgba(0,0,0,.1);
+
+        }
+	</style>
+</head>
+<body> 
+	<div class="container">
+		<div class="container-time">
+			<h2 class="heading">TIME SLOT</h2>
+
+			<h3 class="heading-days">Monday-Friday</h3>
+			<p>10am-2pm(morning slot)</p>
+			<p>5pm-10pm(evening slot)</p>
+
+			<h3 class="heading-days">saturday-sunday</h3>
+			<p>11am-3pm(morning slot)</p>
+			<p>4pm-10pm(evening slot)</p>
+		</div>
+		<div class="container-form">
+			<form action="{% url "user_booking" %}" method="post">
+				{% csrf_token %}
+				<h2 class="heading heading-yellow">Car Slot</h2>
+
+
+				<div class="form-field">
+					<p>pickuplocation</p>
+					<input type="text" name="pickuplocation" >
+
+				</div>
+				<br>
+				<div class="form-field">
+					<p> Pickupdate</p>
+					<input type="date" name="pickupdate">
+					
+				</div>
+				<br>
+				<div class="form-field">
+					<p>pickuptime</p>
+					<input type="time" name="pickuptime" >
+					
+				</div>
+				<br>
+				
+				<div class="form-field">
+					<p>dropofflocation</p>
+					<input type="text" name="dropofflocation">
+					
+				</div>
+				<br>
+				<div class="form-field">
+					<p> dropoffdate</p>
+					<input type="date" name="dropoffdate">
+					
+				</div>
+				<br>
+				<div class="form-field">
+					<p> dropofftime</p>
+					<input type="time" name="dropofftime" >
+					
+				</div>
+				<br>
+				<div class="form-field">
+					<p>year</p>
+					<input type="text" name="year">
+					
+				</div>
+				<br>
+				
+			
+				
+					<label for="exampleFormControlInput1" class="form-label">Email address</label>
+					<input type="email" class="form-field" id="exampleFormControlInput1" placeholder="name@example.com">
+				</div>
+                <br>
+                <br>
+				
+				
+				<button class="btn">submit</button>
+				{{msg}}
+			</form>
+		</div>
+	</div>
+	
+</body>
+</html>

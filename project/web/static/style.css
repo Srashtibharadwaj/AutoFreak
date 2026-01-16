@@ -1,0 +1,51 @@
+
+.bg-nav{
+    background-color: #ec6a07;
+   
+}
+.navbar-nav li:hover{
+    background-color: #eff2f3;
+    transition: .5s;
+    border-radius: 5px 0px;
+    
+}
+.navbar-nav li:hover a{
+    color:rgb(237, 60, 60);
+    transition: .5s;
+}
+
+.fa-square-instagram {
+ font-size:70px;
+ color:skyblue;
+}
+.first-row{
+    height: 40px;
+    background-color: red;
+
+}
+.logo{
+
+    width: 150px;
+}
+.particle-background{
+    height: 80%;
+    width: 100%;
+    background-color: #ec6a07;
+}
+.particle{
+    height: 100%;
+    width: 100%;
+    background-color: darkblue;
+}
+#particles-js{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.bg-orange{
+    background-color: #ec6a07;
+}
+
+.petu{
+    text-align: justify;
+}
